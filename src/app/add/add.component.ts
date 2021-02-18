@@ -16,21 +16,23 @@ aps;
 years;
 location;
 qualificationName;
- router: any;
+description;
+router: any;
 
   constructor(private firestore: AngularFirestore, private af: AngularFireStorage) { }
 
   ngOnInit(): void {
   }
 
-  Add(institutionName, aps,years,location, qualificationName) {
+  Add(institutionName, aps,years,qualificationName,location,description ) {
     let id = this.firestore.createId();
     this.firestore.collection('Add').doc(id).set({
     institution: institutionName,
     aps: aps,
     years: years,
+    qualification: qualificationName,
     location: location,
-    qualification: qualificationName
+    description:description
 
   }).then(()=>{
     this.showmessage = true
@@ -40,6 +42,7 @@ qualificationName;
     this.years = '';
     this.location = '';
     this.qualificationName = '';
+    this.description = '';
   }).catch((error)=>{
     console.log(error)
   })
@@ -49,6 +52,6 @@ btnBack(){
 }
 
 
-  
+
 
 }

@@ -27,7 +27,7 @@
         </select>
     </div>
     <br>
-    
+
     <div>
         <label for="image">Choose Image File: </label><br>
       <input type="file" (change)="upload($event)" accept="*.png.jpg.jpeg" id="">
@@ -35,21 +35,20 @@
       <div *ngIf="uploadMessage" class='alert alert-info'>
            Picture Uploaded Successfull
       </div>
-    
+
       </div>
       <div class='alert alert-info' *ngIf="showmessage">
         Submitted Seccessfully
       </div>
-    
-      <button (click)="Add(title, description,type,image)">test</button>
 
-      
-    
-    push project to github
-    
+      <button (click)="Add(title, description,type)">test</button>
+
+
+
+
+
 
 </div>
 
 
 
-  

@@ -15,7 +15,7 @@ export class TimelineComponent implements OnInit {
   type
   image
   showmessage: boolean
-  
+
   op;
 
   constructor(private af: AngularFireStorage, private firestore: AngularFirestore) { }
@@ -44,14 +44,14 @@ export class TimelineComponent implements OnInit {
 
   }
 
-  Add(title, description,type,image) {
+  Add(title, description,type) {
     let id = this.firestore.createId();
     this.firestore.collection('timeline').doc(id).set({
       title: title,
       description: description,
       type: type,
-      image: image,
-    
+      //image: image,
+
 
   }).then(()=>{
     this.showmessage = true
@@ -64,7 +64,7 @@ export class TimelineComponent implements OnInit {
     console.log(error)
   })
 }
-  
+
 
 add(){
   console.log(this.op)
