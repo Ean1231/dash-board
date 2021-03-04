@@ -1,4 +1,4 @@
-<ul>
+<ul class="sticky-top">
   <li><a [routerLink]="'/home'">Home</a></li>
   <li><a class="active">Add</a></li>
   <li><a [routerLink]="'/contact'">Contact</a></li>
@@ -42,12 +42,15 @@
   <label>Description</label>
   <input type='text' [(ngModel)]="description" class='form-control' name='location' placeholder="Enter description">
 </div>
-
-
+<br>
+<div class="form-group">
+  <label for="link">Institution Website</label>
+  <input type="text" class='form-control' placeholder="Enter Institution website" [(ngModel)]="website" name="website">
+</div>
 <br>
 <div class="form-group"  >
 
-  <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description)' >Submit</button>
+  <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description, website)' >Submit</button>
 </div>
 
 

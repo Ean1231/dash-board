@@ -15,6 +15,7 @@ institutionName;
 aps;
 years;
 location;
+website;
 qualificationName;
 description;
 router: any;
@@ -24,7 +25,7 @@ router: any;
   ngOnInit(): void {
   }
 
-  Add(institutionName, aps,years,qualificationName,location,description ) {
+  Add(institutionName, aps,years,qualificationName,location,description, website ) {
     let id = this.firestore.createId();
     this.firestore.collection('Add').doc(id).set({
     institution: institutionName,
@@ -32,7 +33,8 @@ router: any;
     years: years,
     qualification: qualificationName,
     location: location,
-    description:description
+    description:description,
+    website: website
 
   }).then(()=>{
     this.showmessage = true
@@ -43,6 +45,7 @@ router: any;
     this.location = '';
     this.qualificationName = '';
     this.description = '';
+    this.website = "";
   }).catch((error)=>{
     console.log(error)
   })

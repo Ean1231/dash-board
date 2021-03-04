@@ -14,6 +14,7 @@ export class TimelineComponent implements OnInit {
   description
   type
   image
+  link
   showmessage: boolean
 
   op;
@@ -44,12 +45,13 @@ export class TimelineComponent implements OnInit {
 
   }
 
-  Add(title, description,type) {
+  Add(title, description,type, link) {
     let id = this.firestore.createId();
     this.firestore.collection('timeline').doc(id).set({
       title: title,
       description: description,
       type: type,
+      link:link
       //image: image,
 
 
@@ -60,6 +62,7 @@ export class TimelineComponent implements OnInit {
     this.description = '';
     this.type = '';
     this.image = '';
+    this.link = '';
   }).catch((error)=>{
     console.log(error)
   })
