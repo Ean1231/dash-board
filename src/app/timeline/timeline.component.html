@@ -1,13 +1,18 @@
 <ul>
     <li><a [routerLink]="'/home'">Home</a></li>
     <li><a [routerLink]="'/add'">Add</a></li>
-    <li><a [routerLink]="'/contact'">Contact</a></li>
     <li><a class="active">Timeline</a></li>
 
 </ul>
-
-
-    <div style="margin-top: 150px; margin-left: 30%;">
+<h1 style=" margin-left: 655px;">Linkit-Up Dashboard</h1>
+<img src="../../assets/L.png" alt="" style="width: 160px; height: 70px; margin-left: 750px;">
+<!--Alert-->
+<div class='alert alert-info' *ngIf="showmessage">
+    Submitted Seccessfully
+  </div>
+  
+  <br>
+    <div style="margin-top: 0px; margin-left: 30%;">
         <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" class='form-control' style='width: 50%;' placeholder="Enter Title" [(ngModel)]="title" name="title">
@@ -20,10 +25,12 @@
     <br>
     <div class="form-group">
         <label for="title">Type:</label>
-        <select class='form-control' style="width: 50%;" [(ngModel)]="type">
-            <option class='form-control' style="color: light grey;">Choose type</option>
-            <option class='form-control' value="Bursaries" >Bursaries</option>
+        <select class='form-control' style="width: 50%;" [(ngModel)]="type"  >            <!--(change)="Change()"-->
+            <option  value="" disabled selected  class='form-control' style="color: light grey;">Choose type</option>
+            <option class='form-control' value="Bursaries" >Bursary</option>
             <option class='form-control' value="Work Shop">Work Shop</option>
+            <option class='form-control' value="Learnership">Learnership</option>
+            <option class='form-control' value="Internship">Internship</option>
         </select>
     </div>
     <br>
@@ -33,7 +40,28 @@
     </div>
     <br>
 
-    <div>
+    <div class="form-group" >
+        <label for="title">closing Date:</label>
+        <input type="date" class='form-control' style='width: 50%;' placeholder="Enter closingDate" [(ngModel)]="closingDate" name="closingDate">
+    </div>
+    <br>
+
+    <div class="form-group" >
+        <label for="studyField">Study field:</label>
+        <select  class='form-control' style="width: 50%;" [(ngModel)]="studyField">
+            <option  value="" disabled selected class='form-control' style="color: light grey;">Choose type</option>
+            <option class='form-control' value="Education" >Education</option>
+            <option class='form-control' value="Finance">Finance</option>
+            <option class='form-control' value="Arts" >Arts</option>
+            <option class='form-control' value="Systems Development">Systems Development</option>
+            <option class='form-control' value="Law" >Law</option>
+            <option class='form-control' value="Engineering" >Engineering</option>
+            <option class='form-control' value="Business Management">Business Management</option>
+        </select>
+    </div>
+    <br>
+   <!--
+       <div>
         <label for="image">Choose Image File: </label><br>
       <input type="file" (change)="upload($event)" accept="*.png.jpg.jpeg" id="">
       <button (click)="uploadImage()">Upload Image</button>
@@ -42,11 +70,10 @@
       </div>
 
       </div>
-      <div class='alert alert-info' *ngIf="showmessage">
-        Submitted Seccessfully
-      </div>
+   --> 
+    
 
-      <button (click)="Add(title, description,type, link)">test</button>
+      <button (click)="Add(title, description,type, link, closingDate, studyField)">Add</button>
 
 
 

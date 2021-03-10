@@ -1,14 +1,15 @@
-<ul class="sticky-top">
+<ul class="sticky-top" >
   <li><a [routerLink]="'/home'">Home</a></li>
   <li><a class="active">Add</a></li>
-  <li><a [routerLink]="'/contact'">Contact</a></li>
   <li><a [routerLink]="'/timeline'">Timeline</a></li>
 </ul>
 
-<h4 style='margin-left: 720px; margin-top: 50px;'>Link-Up Dashboard</h4>
-
-<img src="/src/assets/downloadsj.jpg" style='width: 50px; height: 50px; margin-left: 47%;' alt="logo">
-<div class="row" style="margin-left: 28%; margin-top: 90px;">
+<h1 style='margin-left: 770px;'>Link-Up Dashboard</h1>
+<img src="../../assets/L.png" alt="" style="width: 150px; height: 70px; margin-left: 850px;">
+<div class='alert alert-info' *ngIf="showmessage">
+  Submitted Seccessfully
+</div>
+<div class="row" style="margin-left: 28%; margin-top: 30px;">
 <div class="col-md-7">
 
 <form >
@@ -55,9 +56,7 @@
 
 
 </form>
-<div class='alert alert-info' *ngIf="showmessage">
-  Submitted Seccessfully
-</div>
+
 </div>
 <div class="col-md-7">
 </div>

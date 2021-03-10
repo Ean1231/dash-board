@@ -38,7 +38,7 @@ router: any;
 
   }).then(()=>{
     this.showmessage = true
-    setTimeout(()=> this.showmessage = false, 3000);
+    setTimeout(()=> this.showmessage = false, 2000);
     this.institutionName = '';
     this.aps = '';
     this.years = '';
