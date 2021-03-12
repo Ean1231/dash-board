@@ -1,9 +1,97 @@
-<ul>
-    <li><a class="active">Home</a></li>
-    <li><a [routerLink]="'/add'">Add</a></li>
-    <li><a [routerLink]="'/timeline'">Timeline</a></li>
-</ul>
-<div>
+<body>
+  <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img
+          src="../../assets/L.png"
+          width="45"
+          alt=""
+          class="d-inline-block align-middle mr-2"
+        />
+        <span class="text-uppercase font-wieght-bold">Linkit-up</span>
+      </a>
+      <button
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-control="navbarContent"
+        aria-expand="false"
+        aria-lable="ToggleNavigation"
+        class="navbar-toggler"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/home">Dashboard</a></li>
+          <li class="nav-item"><a href="/add">Add Institution</a></li>
+          <li class="nav-item"><a href="/timeline">Add News Feeds</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <div class="content2">
+      <canvas id="myChart" > </canvas>
+    </div>
+
+    <div>
+      <div class="divContent">
+        <a href="/add">
+          <img
+            src="../../assets/dddd.png"
+            style="height: 100px; width: 100px"
+            alt=""
+          /><br /><br />
+          <h3 class="lead" style="color: black">Add Institution</h3>
+          <br />
+          <p style="color: black">
+            By adding institution it allows our users to find the suitable
+            institution to further their studies
+          </p>
+        </a>
+      </div>
+
+      <div class="divContent">
+        <a href="/timeline">
+          <img
+            src="../../assets/sssss.png"
+            style="height: 100px; width: 100px"
+            alt=""
+          /><br /><br />
+          <h3 class="lead" style="color: black">
+            Add Institution <br /><br />
+          </h3>
+          <p style="color: black">
+            By adding institution it allows our users to find the suitable
+            institution to further their studies
+          </p>
+        </a>
+      </div>
+
+      <div class="divContent">
+        <a href="">
+          <img
+            src="../../assets/eeeee.png"
+            style="height: 100px; width: 100px"
+            alt=""
+          /><br /><br />
+          <h3 class="lead" style="color: black">Add News Feeds <br /><br /></h3>
+          <p style="color: black">
+            By adding institution it allows our users to find the suitable
+            institution to further their studies
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--
+   
+    
+    
+    <div>
 <div  class="text-center ">
 
    <h1>
@@ -23,7 +111,21 @@
            architecto perspiciatis delectus minus accusamus! <br>
            Aliquam, ex! Iste, quas?</p>
            <a class="btn btn-secondary btn-md" href="../add/">Add Institution</a>
+
+           
        </div>
+       <div class="col-12 text-center">
+        <header >
+            <h3>Our Mission</h3> 
+         </header>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br>
+            Cumque nulla sapiente excepturi quis labore sit, suscipit, <br>
+            quae veniam dolor sint alias <br>
+            architecto perspiciatis delectus minus accusamus! <br>
+            Aliquam, ex! Iste, quas?</p>
+            <a class="btn btn-secondary btn-md" href="../timeline/">Add News Feeds</a>
+ 
+       </div>
+       
 </div>
-
-
+--></body>

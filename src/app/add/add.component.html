@@ -1,65 +1,81 @@
-<ul class="sticky-top" >
-  <li><a [routerLink]="'/home'">Home</a></li>
-  <li><a class="active">Add</a></li>
-  <li><a [routerLink]="'/timeline'">Timeline</a></li>
-</ul>
-
-<h1 style='margin-left: 770px;'>Link-Up Dashboard</h1>
-<img src="../../assets/L.png" alt="" style="width: 150px; height: 70px; margin-left: 850px;">
-<div class='alert alert-info' *ngIf="showmessage">
-  Submitted Seccessfully
-</div>
-<div class="row" style="margin-left: 28%; margin-top: 30px;">
-<div class="col-md-7">
-
-<form >
-
-<div class="form-group">
-  <label>Institution Name</label>
-  <input type='text' class='form-control'  [(ngModel)]="institutionName" name='institutionName' placeholder="Enter institution name">
-</div>
-
-<div class="form-group">
-  <label>AP Score</label>
-  <input type='text' [(ngModel)]="aps" class='form-control' name='aps' placeholder="Enter Ap Score">
-</div>
-
-<div class="form-group">
-  <label>Years</label>
-  <input type='text' [(ngModel)]="years" class='form-control' name='years' placeholder="years to study">
-</div>
-
-<div class="form-group">
-  <label>Qualification</label>
-  <input type='text' [(ngModel)]="qualificationName" class='form-control' name='qualificationName' placeholder="Enter qualification name">
-</div>
-
-<div class="form-group">
-  <label>Location</label>
-  <input type='text' [(ngModel)]="location" class='form-control' name='location' placeholder="Enter location">
-</div>
-
-<div class="form-group">
-  <label>Description</label>
-  <input type='text' [(ngModel)]="description" class='form-control' name='location' placeholder="Enter description">
-</div>
-<br>
-<div class="form-group">
-  <label for="link">Institution Website</label>
-  <input type="text" class='form-control' placeholder="Enter Institution website" [(ngModel)]="website" name="website">
-</div>
-<br>
-<div class="form-group"  >
-
-  <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description, website)' >Submit</button>
-</div>
-
-
-</form>
-
-</div>
-<div class="col-md-7">
-</div>
-
-
-</div>
+<body>
+  <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+        <img src="../../assets/L.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+        <span class="text-uppercase font-wieght-bold">Linkit-up</span>
+    </a>
+    <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-control="navbarContent" aria-expand="false" aria-lable="ToggleNavigation" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/home">Dashboard</a></li>
+          <li class="nav-item"><a href="/add">Add Institution</a></li>
+          <li class="nav-item"><a href="/timeline">Add News Feeds</a></li>
+        </ul>
+    </div>
+    </div>
+  </nav>
+  
+  <h1 style='margin-left: 770px;'>Link-Up Dashboard</h1>
+  <img src="../../assets/L.png" alt="" style="width: 150px; height: 70px; margin-left: 850px;">
+  <div class='alert alert-info' *ngIf="showmessage">
+    Submitted Seccessfully
+  </div>
+  <div class="row" style="margin-left: 28%; margin-top: 30px;">
+  <div class="col-md-7">
+  
+  <form >
+  
+  <div class="form-group">
+    <label>Institution Name</label>
+    <input type='text' class='form-control'  [(ngModel)]="institutionName" name='institutionName' placeholder="Enter institution name">
+  </div>
+  
+  <div class="form-group">
+    <label>AP Score</label>
+    <input type='text' [(ngModel)]="aps" class='form-control' name='aps' placeholder="Enter Ap Score">
+  </div>
+  
+  <div class="form-group">
+    <label>Years</label>
+    <input type='text' [(ngModel)]="years" class='form-control' name='years' placeholder="years to study">
+  </div>
+  
+  <div class="form-group">
+    <label>Qualification</label>
+    <input type='text' [(ngModel)]="qualificationName" class='form-control' name='qualificationName' placeholder="Enter qualification name">
+  </div>
+  
+  <div class="form-group">
+    <label>Location</label>
+    <input type='text' [(ngModel)]="location" class='form-control' name='location' placeholder="Enter location">
+  </div>
+  
+  <div class="form-group">
+    <label>Description</label>
+    <input type='text' [(ngModel)]="description" class='form-control' name='location' placeholder="Enter description">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="link">Institution Website</label>
+    <input type="text" class='form-control' placeholder="Enter Institution website" [(ngModel)]="website" name="website">
+  </div>
+  <br>
+  <div class="form-group"  >
+  
+    <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description, website)' >Submit</button>
+  </div>
+  
+  
+  </form>
+  
+  </div>
+  <div class="col-md-7">
+  </div>
+  
+  
+  </div>
+  
+</body>

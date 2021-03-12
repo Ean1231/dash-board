@@ -1,13 +1,4 @@
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0px;
-    overflow: hidden;
-    background-color: #333;
-}
-li{
-    float: left;
-}
+
 li a{
     display: block;
     color: white;
@@ -18,3 +9,37 @@ li a{
 li a:hover {
     background-color: grey;
 }
+body{
+    color: #514b64;
+    min-height: 100vh;
+    
+}
+.divContent{
+    border: 1px solid black;
+    width: 600px;
+    height: 300px;
+    justify-content: space-evenly;
+    float: left;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 28px;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+}
+.content2{
+    border: 1px solid black;
+    width: 1850px;
+    height: 450px;
+
+    margin-top: 30px;
+    margin-left: 28px;
+    display: block;
+
+}
+.divContent:hover {
+    background-color: azure;
+   }
+   
