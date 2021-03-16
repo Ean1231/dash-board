@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import  { AngularFireStorage } from '@angular/fire/storage'
-
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -23,12 +23,38 @@ img
 path: string;
 
 
-  constructor(private firestore: AngularFirestore, private af: AngularFireStorage) { }
+  constructor(private firestore: AngularFirestore, private af: AngularFireStorage, ) { }
 
   ngOnInit(): void {
   }
+  validateWeb(){
+    var pattern = new RegExp(/(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/); // fragment locator
+    //console.log(pattern.test(this.website))
 
-  Add(institutionName, aps,years,qualificationName,location,description, website ) {
+
+  if(pattern.test(this.website)) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Congrats...',
+      text: 'Website saved successfully!',
+      footer: '<a href>Good Work</a>'
+    })
+  }
+  else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
+  }
+    
+    
+  }
+
+
+
+  Add(institutionName, aps,years,qualificationName,location,description, website, img ) {
     let id = this.firestore.createId();
     this.firestore.collection('Add').doc(id).set({
     institution: institutionName,
@@ -38,7 +64,7 @@ path: string;
     location: location,
     description:description,
     website: website,
-    img: this.img
+    img: img
 
   }).then(()=>{
     this.showmessage = true

@@ -50,7 +50,7 @@
         <br>
         <div class="form-group">
             <label for="link">Type Link:</label>
-            <input type="text" class='form-control' style='width: 50%;' placeholder="Enter Link" [(ngModel)]="link" name="link">
+            <input type="text" class='form-control' (change)="validateWeb()" style='width: 50%;' placeholder="Enter Link" [(ngModel)]="link" name="link">
         </div>
         <br>
         <div class="form-group"> 
@@ -63,7 +63,7 @@
         </div>
         <br>
     
-        <div class="form-group" >
+       
             <label for="studyField">Study field:</label>
             <select  class='form-control' style="width: 50%;" [(ngModel)]="studyField">
                 <option  value="" disabled selected class='form-control' style="color: light grey;">Choose type</option>
@@ -75,7 +75,7 @@
                 <option class='form-control' value="Engineering" >Engineering</option>
                 <option class='form-control' value="Business Management">Business Management</option>
             </select>
-        </div>
+      
         <br>
        <!--
            <div>

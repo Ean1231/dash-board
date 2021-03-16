@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-timeline',
@@ -55,7 +56,32 @@ export class TimelineComponent implements OnInit {
     }
   }
 
-  Add(title, description, type, link, closingDate, studyField) {
+  validateWeb(){
+    var pattern = new RegExp(/(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/); // fragment locator
+    //console.log(pattern.test(this.website))
+
+
+  if(pattern.test(this.link)) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Congrats...',
+      text: 'Website saved successfully!',
+      footer: '<a href>Good Work</a>'
+    })
+  }
+  else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
+  }
+    
+    
+  }
+
+  Add(title, description, type, link, closingDate, studyField,img) {
     console.log(this.img)
 
     let id = this.firestore.createId();
@@ -69,11 +95,16 @@ export class TimelineComponent implements OnInit {
         link: link,
         closingDate: closingDate,
         studyField: studyField,
-        img: this.img,
+        img: img,
       
       })
       .then(() => {
-        this.showmessage = true;
+        Swal.fire({
+          icon: 'success',
+          title: 'Congrats...',
+          text: 'Website saved successfully!',
+          footer: '<a href>Good Work</a>'
+        })
         setTimeout(() => (this.showmessage = false), 3000);
         this.title = '';
         this.description = '';
