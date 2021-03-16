@@ -58,6 +58,10 @@
     <input type='text' [(ngModel)]="description" class='form-control' name='location' placeholder="Enter description">
   </div>
   <br>
+  <div class="form-group"> 
+    <label for="link">Institution Image</label>
+    <input type="file" class='form-control' style='width: 50%;' placeholder="Enter Link"  name="link"   accept="image/png, image/jpeg"  (change)="getImage($event)">
+</div> <br> 
   <div class="form-group">
     <label for="link">Institution Website</label>
     <input type="text" class='form-control' placeholder="Enter Institution website" [(ngModel)]="website" name="website">
@@ -65,7 +69,7 @@
   <br>
   <div class="form-group"  >
   
-    <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description, website)' >Submit</button>
+    <button class='btn btn-primary' (click)='Add(institutionName,aps,years,qualificationName,location,description, website, img)' >Submit</button>
   </div>
   
   

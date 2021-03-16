@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
       data: {
           labels: ['Jan', 'Feb', 'March', 'Apr', 'May', 'June'],
           datasets: [{
-              label: '# of Votes',
+              label: '# of Registrations',
               data: [12, 19, 3, 5, 2, 3],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
@@ -49,5 +49,6 @@ export class HomeComponent implements OnInit {
       }
   });
   }
+  
 
 }

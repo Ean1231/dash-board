@@ -20,6 +20,8 @@ export class TimelineComponent implements OnInit {
 
   op;
 
+  img
+
   hideInput:boolean =false;
 
   constructor(
@@ -29,23 +31,33 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit(): void {}
   path: string;
-
+  
   upload($event) {
     this.path = $event.target.files[0];
   }
 
-  uploadImage() {
-    console.log(this.path);
-    this.af.upload('/files' + Math.random() + this.path, this.path);
+  getImage(event) {
+    let reader = new FileReader(); // HTML5 FileReader API
+    let file = event.target.files[0];
+    if (event.target.files && event.target.files[0]) {
+      reader.readAsDataURL(file);
 
-    if ((this.uploadMessage = true)) {
-      setTimeout(() => (this.uploadMessage = false), 2000);
-    } else if ((this.uploadMessage = false)) {
-      alert('Picture could not be uploaded');
+      // When file uploads set it to file formcontrol
+      reader.onload = () => {
+        this.img = reader.result;
+        
+        
+      };
+
+   
+      // ChangeDetectorRef since file is loading outside the zone
+      
     }
   }
 
   Add(title, description, type, link, closingDate, studyField) {
+    console.log(this.img)
+
     let id = this.firestore.createId();
     this.firestore
       .collection('timeline')
@@ -57,7 +69,8 @@ export class TimelineComponent implements OnInit {
         link: link,
         closingDate: closingDate,
         studyField: studyField,
-        //image: image,
+        img: this.img,
+      
       })
       .then(() => {
         this.showmessage = true;
@@ -73,6 +86,9 @@ export class TimelineComponent implements OnInit {
       .catch((error) => {
         console.log(error);
       });
+
+
+      
   }
 
   add() {

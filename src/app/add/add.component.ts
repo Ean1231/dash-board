@@ -19,6 +19,9 @@ website;
 qualificationName;
 description;
 router: any;
+img
+path: string;
+
 
   constructor(private firestore: AngularFirestore, private af: AngularFireStorage) { }
 
@@ -34,7 +37,8 @@ router: any;
     qualification: qualificationName,
     location: location,
     description:description,
-    website: website
+    website: website,
+    img: this.img
 
   }).then(()=>{
     this.showmessage = true
@@ -54,7 +58,28 @@ btnBack(){
   this.router.navigate("./home");
 }
 
+upload($event) {
+  this.path = $event.target.files[0];
+}
 
+getImage(event) {
+  let reader = new FileReader(); // HTML5 FileReader API
+  let file = event.target.files[0];
+  if (event.target.files && event.target.files[0]) {
+    reader.readAsDataURL(file);
+
+    // When file uploads set it to file formcontrol
+    reader.onload = () => {
+      this.img = reader.result;
+      
+      
+    };
+
+ 
+    // ChangeDetectorRef since file is loading outside the zone
+    
+  }
+}
 
 
 }

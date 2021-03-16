@@ -53,7 +53,10 @@
             <input type="text" class='form-control' style='width: 50%;' placeholder="Enter Link" [(ngModel)]="link" name="link">
         </div>
         <br>
-    
+        <div class="form-group"> 
+            <label for="link">Add Image</label>
+            <input type="file" class='form-control' style='width: 50%;' placeholder="Enter Link"  name="link"   accept="image/png, image/jpeg"  (change)="getImage($event)">
+        </div> <br> 
         <div class="form-group" >
             <label for="title">closing Date:</label>
             <input type="date" class='form-control' style='width: 50%;' placeholder="Enter closingDate" [(ngModel)]="closingDate" name="closingDate">
@@ -86,8 +89,10 @@
           </div>
        --> 
         
+
     
-          <button (click)="Add(title, description,type, link, closingDate, studyField)">Add</button>
+    
+          <button (click)="Add(title, description,type, link, closingDate, studyField, img)">Add</button>
     
     
     
