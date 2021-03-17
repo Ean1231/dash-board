@@ -16,7 +16,8 @@ import { environment } from '../environments/environment'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TimelineComponent } from './timeline/timeline.component'
-import { AngularFireStorageModule } from '@angular/fire/storage'
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 const routes: Routes = []
@@ -36,7 +37,7 @@ const routes: Routes = []
     ReactiveFormsModule,
     FormsModule,
     AngularFireStorageModule,
-    RouterModule.forRoot(routes),AngularFireModule.initializeApp(environment.firebaseConfig)
+    RouterModule.forRoot(routes),AngularFireModule.initializeApp(environment.firebaseConfig), BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

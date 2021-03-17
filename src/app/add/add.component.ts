@@ -37,7 +37,7 @@ path: string;
       icon: 'success',
       title: 'Congrats...',
       text: 'Website saved successfully!',
-      footer: '<a href>Good Work</a>'
+      footer: '<a href>Good Work?</a>'
     })
   }
   else{
@@ -76,6 +76,7 @@ path: string;
     this.qualificationName = '';
     this.description = '';
     this.website = "";
+    this.img = "";
   }).catch((error)=>{
     console.log(error)
   })
